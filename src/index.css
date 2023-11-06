@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #060E1B;
+  z-index: 1;
+  height: -webkit-fill-available;
+}
+body{
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#root{
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+  background-color: #060E1B;
+  padding: 100px  0;
+  position: relative;
+}
+.modal{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: #060E1B;
+  font-weight: bold;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.modal button{
+  padding: 12px;
+  color: white;
+  background-color: #060E1B;
+  border:none;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  letter-spacing: 1px;
+}
+.modal button:hover{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  color: #64FFDA;
+}
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+/*   pointer-events: none; */
+}
+
+.hidden {
+  opacity: 0;
+  
+  pointer-events: none; /* Para evitar interacción con elementos ocultos */
+}
+
+.fade-in {
+  animation: fadeIn 1s ease; /* Puedes ajustar la duración y el tipo de animación */
+  opacity: 1;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.info-content{
+  user-select: none;
+}
+/* Definir la animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* O cualquier otra transformación que desees */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .fade-in{
+    font-size: 10px;
+  }
+  body #root{
+    width: 100%;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #060E1B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: #133040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar:hover:active {
+  background: #133040;
+}
+
+
+
+
+/* Estilos para el input de tipo number */
+input[type="number"] {
+  width: 100%;
+  background-color: #1a3054;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button
+ {
+  appearance: none
+}
+
+
