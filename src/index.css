@@ -2,31 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #060E1B;
-  z-index: 1;
-  height: -webkit-fill-available;
-}
-body{
-    height: 100%;
-    overflow-y: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  scroll-behavior: smooth;
 }
 
-#root{
-  max-width: 1200px;
-  width: 100%;
-  height: auto;
-  background-color: #060E1B;
-  padding: 100px  0;
-  position: relative;
+@layer components {
+
+  /* estilos por defecto de las secciones  */
+  .default-box {
+    @apply w-full h-full flex flex-col justify-center items-center my-0 mx-auto rounded-sm gap-10 mb-20 sm:p-0;
+  }
+
+  /* minititulos  */
+  .mini-title {
+    @apply text-skyblue letras-p leading-[0px] pl-1 sm:mb-4 font-[lato] font-bold;
+  }
+
+  /* Estilos de los botones */
+  .custonButton {
+    @apply text-skyblue rounded-md border border-skyblue font-normal cursor-pointer transition-all duration-300 hover:bg-[#6dbb8b46] hover:text-skyblue sm:text-lg;
+  }
+
+  /*  estilos de la lista del header*/
+  .list-items {
+    @apply transition-all duration-300 text-sm cursor-pointer hover:text-skyblue hover:transition-all hover:duration-300 before:text-xs before:text-skyblue before:mr-[3px] before:font-['lato,sans-serif'] before:content-["0"_counter(numero)_"."];
+    counter-increment: numero;
+  }
+  /* estilos para las vivencias y aptitudes en la seccion acerca de mi o about */
+  .aboutme-item {
+    @apply transition-all duration-300 text-sm hover:text-skyblue hover:sm:transition-all before:text-xs before:text-skyblue before:mr-[3px] before:font-['lato,sans-serif'] before:content-["▹"];
+  }
+
+  .about-item_aditional-styles {
+    @apply before:bg-skyblue before:h-full before:w-[1px] before:absolute before:left-[-15px] transition-all duration-300 sm:flex-row sm:before:h-[1px] sm:before:w-full sm:before:bottom-0 sm:before:left-0;
+  }
+
+  /* ITEMS DE SKILLS */
+  .skills-items {
+    @apply relative w-[100px] h-[50px] flex items-center sm:justify-center cursor-pointer;
+  }
+
+  /* transicion del logo  */
+  .circulo {
+    @apply opacity-0 transition-all duration-500;
+  }
+
+  .logo:hover .circulo {
+    @apply opacity-100 transition-all duration-500;
+  }
+
+  /* tamaños de las fuentes  */
+  .titulo {
+    @apply text-[clamp(35px,8vw,80px)];
+  }
+
+  .letras-p {
+    @apply text-[clamp(0.6rem,8vw,1rem)];
+  }
+
+  /* Titulos universales con contador (01..02..03 etc) */
+  .universal-title-description {
+    @apply text-[clamp(1.2rem,5vw,1.875rem)] text-titleText font-bold before:content-["0"_counter(utd)_"."] before:text-[clamp(1.125rem,3vw,1.375rem)] before:text-skyblue before:mr-[-3px] before:font-['lato,sans-serif'] after:content-[""] after:w-[100%] after:inline-block whitespace-nowrap overflow-hidden after:h-[.1px] after:bg-skyblue after:bg-opacity-20 after:relative after:top-[-8px] after:ml-1 overflow-x-hidden after:sm:top-[-5px];
+    counter-increment: utd;
+  }
+
+  /* Estilos para los titulos del portafolio */
+  .portfolio-title {
+    @apply text-[clamp(1rem,2vw,1.3rem)] text-titleText font-bold text-lg before:text-sm before:mr-1;
+  }
 }
-.modal{
+#root {
+  counter-reset: numero;
+  counter-reset: utd;
+  background-color: theme("colors.darkblue");
+}
+
+/* Animations */
+.social-media::after, .email::after{
+  animation: social-bar  linear both;
+  animation-timeline: scroll(root block); 
+}
+
+.card{
+  z-index:9;
+  animation: cards-animation linear both;
+  animation-timeline: view(); 
+  animation-range: entry 20% cover 30%
+}
+
+.profile-picture:hover .picture {
+  mix-blend-mode: normal;
+}
+.bars{
+  animation: barss 0.2s linear forwards
+}
+
+.xmark{
+  animation: barss 0.2s linear backwards
+}
+/* <Animations/> */
+
+
+
+
+
+
+
+/* --------------------------------estilos de TODOAPP */
+.modal {
   text-align: center;
   display: flex;
   align-items: center;
@@ -39,80 +125,159 @@ body{
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  color: #060E1B;
+  color: #060e1b;
   font-weight: bold;
   transition: opacity 0.3s;
   backdrop-filter: blur(4px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
-.modal button{
+
+.modal button {
   padding: 12px;
   color: white;
-  background-color: #060E1B;
-  border:none;
+  background-color: #060e1b;
+  border: none;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   letter-spacing: 1px;
 }
-.modal button:hover{
+
+.modal button:hover {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  color: #64FFDA;
+  color: #64ffda;
 }
+
 .modal-content {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-/*   pointer-events: none; */
+  /*   pointer-events: none; */
 }
 
 .hidden {
   opacity: 0;
-  
-  pointer-events: none; /* Para evitar interacción con elementos ocultos */
+  pointer-events: none;
+  /* Para evitar interacción con elementos ocultos */
 }
 
 .fade-in {
-  animation: fadeIn 1s ease; /* Puedes ajustar la duración y el tipo de animación */
+  animation: fadeIn 1s ease;
+  /* Puedes ajustar la duración y el tipo de animación */
   opacity: 1;
 }
+
 .fade-out {
   opacity: 0;
   transition: opacity 0.3s ease-in;
 }
-.info-content{
+
+.info-content {
   user-select: none;
 }
-/* Definir la animación */
+
+/* ketFrames */
+
+@keyframes mobile-menu {
+  from {
+    
+    transform: translateX(1000px)
+  }
+
+  to {
+    transform: translateX(0px)
+  }
+}
+@keyframes barss {
+  from {
+    
+    rotate:180deg
+  }
+
+  to {
+    rotate: 0deg
+  }
+}
+@keyframes cards-animation {
+  from {
+    
+    opacity:0;
+    translate: 0 50px
+  }
+
+  to {
+    opacity:1;
+    translate: 0 0
+  }
+}
+
+@keyframes social-bar {
+  from {
+    
+    opacity:.4;
+    background-color: rgb(136 146 176)
+  }
+
+  to {
+    width:1.5px;
+
+    background-color: #64FFDA
+  }
+}
+@keyframes headerAnimation {
+  from {
+    height: 70px;
+  }
+
+  to {
+    height:20px;
+    opacity:0;
+  }
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateX(-20px); /* O cualquier otra transformación que desees */
+    transform: translateX(-20px);
+    /* O cualquier otra transformación que desees */
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@media (max-width: 640px) {
-  .fade-in{
-    font-size: 10px;
+/* --------------------------------termina estilos TODOAPP */
+
+/* Media Queryes */
+
+@media (min-width: 630px) {
+  header {
+    animation: headerAnimation  linear both;
+    animation-timeline: scroll(root block); 
+    animation-range: 0 100px;
+  
   }
-  body #root{
-    width: 100%;
+}
+@media (max-width: 630px) {
+  .list-links-container{
+    animation: mobile-menu .250s ease both
   }
 }
 
+
+
+
 /* scrollbar */
 ::-webkit-scrollbar-thumb {
-  background: #060E1B;
+  background: #060e1b;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -124,19 +289,13 @@ body{
   background: #133040;
 }
 
-
-
-
 /* Estilos para el input de tipo number */
 input[type="number"] {
   width: 100%;
   background-color: #1a3054;
-
 }
 
-input[type="number"]::-webkit-inner-spin-button
- {
-  appearance: none
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
 }
-
 
