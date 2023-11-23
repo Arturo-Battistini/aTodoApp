@@ -1,44 +1,35 @@
 
-gh-pages link: https://arturo-battistini.github.io/aTodoApp/
-
+https://www.abattistini.cl/
+https://arturo-battistini.github.io/my-portfolio/
 --------------------------------------------------------------------------------------------//English
 
-I have created this small project to put my knowledge into practice in React, including components, states, and local storage handling, among other components like Tailwind CSS.
 
-I have developed a simple application, which, in my opinion, is complete within its limitations. It includes warnings about what can and cannot be done, and I believe it is entirely intuitive.
+Greetings community!
 
-I have also added a simple 'Night and Day Mode.'
+I present to you my portfolio, which I have seamlessly integrated into my website to provide an enhanced visual experience. As I complete new projects, I will incorporate them into this page, allowing my portfolio to grow over time.
 
-My experience with technologies like Tailwind CSS is interesting, although I personally prefer pure CSS, as I find it more organized and conducive to sustainable and easy-to-maintain code.
+Additionally, I will share the code for each project independently in my GitHub repository for a more organized structure.
 
-The use of context and global states is crucial, and they have been successfully implemented in this application. Additionally, destructuring has been applied correctly.
+This project was developed from scratch, without technical assistance, giving it its own characteristics, both positive and negative. In the implementation, we used React hooks, global state management, routing, effects, localStorage, and icons.
 
-Responsive design has been appropriately implemented in this app.
+Regarding styles, we chose to use Tailwind. Although not my favorite, we managed to create interesting things, albeit a bit chaotic. For future projects, I will definitely consider returning to vanilla CSS for a more structured approach.
 
-While there is room for improvement to make the app easier to maintain, this project is for demonstrative purposes only.
+The project structure is based solely on JSX.
 
-More projects coming soon in my portfolio.
-
-With all my eagerness to keep learning always...
-Arturo Battistini 😉
+With this project, my goal is to delve into and showcase my skills to seize job opportunities.
 
 ------------------------------------------------------------------------------------------------//Spanish
 
-Este pequeño proyecto lo he creado para poner en práctica mis conocimientos en React, incluyendo componentes, estados y el manejo del almacenamiento local, entre otros componentes como Tailwind CSS.
+¡Saludos comunidad!
 
-He programado una aplicación sencilla pero, en mi opinión, completa dentro de sus limitaciones. Cuenta con advertencias sobre lo que se puede y no se puede hacer, y creo que es totalmente intuitiva.
+Les presento mi portafolio, el cual he integrado de manera armoniosa en mi página web para ofrecer una experiencia visual mejorada. A medida que complete nuevos proyectos, los agregaré a esta página, haciendo que mi portafolio crezca con el tiempo.
 
-También se ha agregado un sencillo modo de "Modo nocturno y diurno".
+Además, publicaré el código de cada proyecto de manera independiente en mi repositorio de GitHub para una mejor desestructuración.
 
-Mi experiencia usando tecnologías como Tailwind CSS es curiosa, aunque personalmente prefiero el CSS puro, ya que considero que es más organizado y contribuye a un código más sostenible y fácil de mantener.
+Este proyecto fue creado completamente desde cero, sin ninguna asistencia técnica, lo que le confiere sus propios defectos y virtudes. En la implementación, utilizamos los hooks de React, gestión de estado global, enrutamiento, efectos, localStorage e iconos.
 
-El uso del contexto y de estados globales es fundamental, y se han implementado con éxito en esta aplicación. Además, la desestructuración se ha aplicado correctamente.
+En cuanto a los estilos, optamos por utilizar Tailwind. Aunque no es mi preferido, logramos crear cosas interesantes, aunque el proceso fue un tanto caótico. En futuros proyectos, definitivamente consideraré volver a utilizar CSS vanilla para una estructura más ordenada.
 
-El diseño responsivo se ha implementado correctamente en esta aplicación.
+La estructura del proyecto está basada únicamente en JSX.
 
-Aunque se pueden realizar mejoras para facilitar el mantenimiento de la aplicación, este proyecto tiene un propósito puramente demostrativo.
-
-Pronto compartiré más proyectos en mi portafolio.
-
-¡Con muchas ganas de seguir aprendiendo siempre!
-Arturo Battistini 😉
+Con este proyecto, busco incursionar y destacar mis habilidades para optar por oportunidades laborales.
