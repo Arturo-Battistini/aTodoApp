@@ -7,13 +7,14 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+
 }
 
 @layer components {
 
   /* estilos por defecto de las secciones  */
   .default-box {
-    @apply w-full h-full flex flex-col justify-center items-center my-0 mx-auto rounded-sm gap-10 mb-20 sm:p-0;
+    @apply w-full h-full flex flex-col justify-center items-center my-0 mx-auto rounded-sm gap-10 mb-20 p-12 sm:p-0;
   }
 
   /* minititulos  */
@@ -28,8 +29,17 @@
 
   /*  estilos de la lista del header*/
   .list-items {
-    @apply transition-all duration-300 text-sm cursor-pointer hover:text-skyblue hover:transition-all hover:duration-300 before:text-xs before:text-skyblue before:mr-[3px] before:font-['lato,sans-serif'] before:content-["0"_counter(numero)_"."];
-    counter-increment: numero;
+    @apply transition-all duration-300 text-sm  text-pText cursor-pointer hover:text-skyblue before:text-xs before:text-skyblue before:mr-[3px] before:font-['lato,sans-serif'] 
+     md:text-xs before:md:text-xs before:content-["0"_counter(numero)_"."] 
+     sm:text-lg sm:font-bold sm:before:hidden
+; 
+    counter-increment:numero;
+  }
+
+  /* Titulos universales con contador (01..02..03 etc) */
+  .universal-title_description {
+    @apply text-[clamp(1.2rem,5vw,1.875rem)] text-titleText font-bold  before:text-[clamp(1.125rem,3vw,1.375rem)] before:text-skyblue before:mr-2 before:font-['lato,sans-serif'] after:content-[""] after:w-[100%] after:inline-block whitespace-nowrap overflow-hidden after:h-[.1px] after:bg-skyblue after:bg-opacity-20 after:relative after:top-[-8px] after:ml-4 overflow-x-hidden after:sm:top-[-5px] before:content-["0"_counter(numero2)_"."];
+    counter-increment:numero2;
   }
   /* estilos para las vivencias y aptitudes en la seccion acerca de mi o about */
   .aboutme-item {
@@ -63,21 +73,17 @@
     @apply text-[clamp(0.6rem,8vw,1rem)];
   }
 
-  /* Titulos universales con contador (01..02..03 etc) */
-  .universal-title-description {
-    @apply text-[clamp(1.2rem,5vw,1.875rem)] text-titleText font-bold before:content-["0"_counter(utd)_"."] before:text-[clamp(1.125rem,3vw,1.375rem)] before:text-skyblue before:mr-[-3px] before:font-['lato,sans-serif'] after:content-[""] after:w-[100%] after:inline-block whitespace-nowrap overflow-hidden after:h-[.1px] after:bg-skyblue after:bg-opacity-20 after:relative after:top-[-8px] after:ml-1 overflow-x-hidden after:sm:top-[-5px];
-    counter-increment: utd;
-  }
 
+  
   /* Estilos para los titulos del portafolio */
   .portfolio-title {
     @apply text-[clamp(1rem,2vw,1.3rem)] text-titleText font-bold text-lg before:text-sm before:mr-1;
   }
 }
-#root {
-  counter-reset: numero;
-  counter-reset: utd;
-  background-color: theme("colors.darkblue");
+
+body{
+  counter-reset: numero2 numero;
+  background-color:#0A192F
 }
 
 /* Animations */
@@ -104,12 +110,6 @@
   animation: barss 0.2s linear backwards
 }
 /* <Animations/> */
-
-
-
-
-
-
 
 /* --------------------------------estilos de TODOAPP */
 .modal {
@@ -185,11 +185,12 @@
 @keyframes mobile-menu {
   from {
     
-    transform: translateX(1000px)
+    transform: translateX(1000px);
   }
 
   to {
-    transform: translateX(0px)
+    transform: translateX(0px);
+
   }
 }
 @keyframes barss {
@@ -265,12 +266,9 @@
 }
 @media (max-width: 630px) {
   .list-links-container{
-    animation: mobile-menu .250s ease both
+    animation: mobile-menu .3s alternate forwards
   }
 }
-
-
-
 
 /* scrollbar */
 ::-webkit-scrollbar-thumb {

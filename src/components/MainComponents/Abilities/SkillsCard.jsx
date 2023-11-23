@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Contexto } from '../../../Contexto/index'
-import Services from './Services'
+import Services from './Abilities'
 const SkillsCard = ({ skill, skill2, skill3, skill4, spaSkill, serviceSelected }) => {
 
   const { language

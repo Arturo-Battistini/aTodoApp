@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Contexto } from '../Contexto/index'
 
-const DefaultStyles = ({children}) => {
+const DefaultStyles = ({ children }) => {
+
+
   return (
-  <div className='default-Styles flex flex-col items-center max-w-[1200px] mx-auto my-0'>
-    {children}
-  </div>
+    <div className='default-Styles flex flex-col items-center max-w-[1200px] mx-auto my-0 '>
+      {children}
+    </div>
   )
 }
 

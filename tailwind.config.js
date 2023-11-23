@@ -4,18 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        skyblue: '#64FFDA',
+
         darkblue: '#0A192F',
+        skyblue: '#64FFDA',
         titleText: '#CCD6F6',
         pText: '#8892B0',
         leadText: '#ccd6f6',
-
-        //light Mode
-        skyblueLight: '#64FFDA',
-        darkblueLight: '#98B0A9',
-        titleTextLight: '#6AD2FF',
-        pTextLight: '#364B45',
-        leadTextLight: '#009CEB',
       },
       screens: {
         '2xl': { 'max': '1535px' },

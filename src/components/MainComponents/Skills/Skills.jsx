@@ -3,8 +3,8 @@ import Card from './Card'
 import { Contexto } from '../../../Contexto/index'
 import '../../../index.css'
 
-export const Knoleadge = () => {
-  const { language, setLanguage, handleLanguage
+export const Skills = () => {
+  const { language, dayNight
   } = useContext(Contexto)
 
   const [fold, setFold] = useState(false)
@@ -14,15 +14,16 @@ export const Knoleadge = () => {
 
   return (
 
-    <section id='knoleadge' data-aos="fade-right" data-aos-delay="150" className='default-box text-white flex flex-col items-center gap-10 '>
-      <div className='universal-title-description__container w-full   '>
-        <h3 className='universal-title-description before:mr-3'> {!language ? 'Conocimientos' : 'English'} </h3>
+    <section id='skills' data-aos="fade-right" data-aos-delay="150" className='default-box text-white flex flex-col items-center gap-10 '>
+      <div className='universal-title_description--container w-full   '>
+        <h3 className={`universal-title_description`}>
+          {!language ? 'Conocimientos' : 'Skills'} </h3>
       </div>
       <div className='card-container grid grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-2'>
 
-        <Card titulo={'Curso de React.js'} description={'Introducción a React'} link={'https://platzi.com/p/arturobattistini/curso/7395-react/diploma/detalle/'} />
+        <Card titulo={'Curso de React.js'} description={'Introducción a React, componentes, hooks, routes, local-storage, context'} link={'https://platzi.com/p/arturobattistini/curso/7395-react/diploma/detalle/'} />
         <Card titulo={'Curso de React.JavaScript con Vite.JavaScript y TailwindCSS'} description={'Practica de react basico con tailwind / intermedio'} link={'https://platzi.com/p/arturobattistini/curso/7396-react-vite-tailwindcss/diploma/detalle/'} />
-        <Card titulo={'Curso de Asincronismo con JavaScript'} description={'JavaScript/intermedio'} link={'https://platzi.com/p/arturobattistini/curso/3175-asincronismo-js/diploma/detalle/'} />
+        <Card titulo={'Curso de Asincronismo con JavaScript'} description={'JavaScript intermedio'} link={'https://platzi.com/p/arturobattistini/curso/3175-asincronismo-js/diploma/detalle/'} />
         <Card titulo={'Curso de Responsive Design: Maquetación Mobile First'} description={'Maquetación con CSS vanilla'} link={'https://platzi.com/p/arturobattistini/curso/2030-mobile-first/diploma/detalle/'} />
         <Card titulo={'Curso Profesional de Git y GitHub'} description={'Como aplicar Git en un ambiente profesional'} link={'https://platzi.com/p/arturobattistini/curso/1557-git-github/diploma/detalle/'} />
         <Card titulo={'Curso Práctico de HTML y CSS'} description={'Practica para profundizar conocimientos'} link={'https://platzi.com/p/arturobattistini/curso/1758-html-practico/diploma/detalle/'} />
@@ -72,7 +73,7 @@ export const Knoleadge = () => {
         <button
           onClick={() => handleFold()}
           className='custonButton px-5 py-3 mt-5 text-yellow-400 font-bold border-yellow-400 tracking-wider '>
-          <a href='https://platzi.com/p/arturobattistini/' target='_blank'>{!language ? 'Certificar Fuentes' : 'english'} </a>
+          <a href='https://platzi.com/p/arturobattistini/' target='_blank'>{!language ? 'Certificar Fuentes' : 'Check Sources'} </a>
         </button>
       </div>
     </section>
