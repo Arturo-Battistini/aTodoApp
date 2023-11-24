@@ -19,7 +19,7 @@ const Portfolio = () => {
       <section className='portfolio-container flex flex-col gap-10'>
         <PortfolioItems
           proyect={Todoapp} portfolioImage={plantilla}
-          appLink={'/my-portfolio/todo'}
+          appLink={'/todo'}
           pDirection={'pl-10 py-3 relative right-10 text-right sm:right-0 sm:left-0 sm:text-left pl-0'}
           titleDirection={'text-right'}
           tecDirection={'items-end'}

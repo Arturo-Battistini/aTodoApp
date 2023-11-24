@@ -3,6 +3,7 @@ import { Contexto } from '../../Contexto/index'
 import "../../index.css"
 import { Logo } from '../../Icons/Icons'
 import { Bars3BottomRightIcon, XMarkIcon, SunIcon, MoonIcon, GlobeAmericasIcon } from '@heroicons/react/24/solid'
+import Resume from '../../assets/Currículum-EN.pdf/'
 const Header = () => {
 
   const { language, setLanguage, isMobileMenuOpen, setIsMobileMenuOpen
@@ -21,7 +22,7 @@ const Header = () => {
       className='text-white flex justify-between w-full fixed h-[70px] bg-[#0a192ff7] backdrop-blur-sm z-10
         '>
       <section className='logo-container flex items-center pl-4 md:pl-2'>
-        <a data-aos="fade-down" href='#home'>
+        <a data-aos="fade-down" href='/'>
           <Logo />
         </a>
 
@@ -72,7 +73,7 @@ const Header = () => {
             </li>
             <button data-aos="fade-down" data-aos-delay="1200"
               className='header-button '>
-              <a className='custonButton py-1 px-5  sm:w-[80%] sm:m-0 mr-4' href='../../../Currículum-EN.pdf' target='_blank'>
+              <a className='custonButton py-1 px-5  sm:w-[80%] sm:m-0 mr-4' href={Resume} target='_blank'>
                 {!language ? 'Resume' : 'Resume'} </a>
             </button>
           </ul>

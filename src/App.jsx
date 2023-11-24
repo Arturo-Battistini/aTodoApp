@@ -10,8 +10,8 @@ import Todo from './Pages/Todo/Todo'
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: 'my-portfolio/', element: <Main /> },
-    { path: 'my-portfolio/todo', element: <Todo /> }
+    { path: '/', element: <Main /> },
+    { path: '/todo/', element: <Todo /> }
 
   ])
   return (routes)
