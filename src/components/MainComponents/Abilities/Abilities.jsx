@@ -3,18 +3,13 @@ import { Contexto } from '../../../Contexto/index'
 import SkillsCard from './SkillsCard'
 
 const Abilities = () => {
-
-  const { language,
-  } = useContext(Contexto)
+  const { language } = useContext(Contexto)
   const [serviceSelected, setServiceSelected] = useState(1)
-  const handleServiceSelected = () => {
-    setServiceSelected('01')
-  }
   return (
 
     <section data-aos="fade-right" data-aos-delay="150" id='abilities' className='text-pText services-container default-box p-32 sm:p-0 '>
       <div className='universal-title_description--container w-full '>
-        <h3 className={`universal-title_description `}>
+        <h3 className={'universal-title_description '}>
           {!language ? 'Aptitudes' : 'Skills'}
         </h3>
       </div>
@@ -46,21 +41,21 @@ const Abilities = () => {
 
         </article>
 
-        {serviceSelected === 1 ?
+        {serviceSelected === 1
 
-          <SkillsCard spaSkill={'Tecnologías con las que puedo contribuir:'} skill={'HTML5 / JSX / PUG'} skill2={'CSS (Vanilla, Sass, Tailwind)'} skill3={'React / JavaScript / API'} skill4={'Git / GitHub'}
+          ? <SkillsCard spaSkill={'Tecnologías con las que puedo contribuir:'} skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / Next.js / Vanilla JavaScript '} skill4={'Git / GitHub'}
             engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected} />
           : false
         }
-        {serviceSelected === 2 ?
-          <SkillsCard skill={'SQL'} skill2={'Node.js (still learning)'} skill3={'Python.js (still learning)'} skill4={'AWS'}
+        {serviceSelected === 2
+          ? <SkillsCard skill={'SQL'} skill2={'Node.js (still learning)'} skill3={'Python.js (still learning)'} skill4={'AWS'}
             engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected}
           />
           : false
         }
 
-        {serviceSelected === 3 ?
-          <SkillsCard skill={'Adobe Photoshop'} skill2={'Adobe Illustrator'} skill3={'Figma'} skill4={'Notion'}
+        {serviceSelected === 3
+          ? <SkillsCard skill={'Adobe Photoshop'} skill2={'Adobe Illustrator'} skill3={'Figma'} skill4={'Notion'}
             engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected} />
           : false
         }

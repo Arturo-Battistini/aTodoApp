@@ -1,10 +1,8 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Contexto } from '../../../Contexto/index'
 
 const Presentation = () => {
-
-  const { language, dayNight
-  } = useContext(Contexto)
+  const { language, dayNight } = useContext(Contexto)
 
   return (
 
@@ -33,7 +31,7 @@ const Presentation = () => {
           {!language ? 'Creo sitios web y aplicaciones web completamente responsivos y funcionales para todos los dispositivos.' : 'I create fully responsive and functional websites and web applications for all devices.'}</p>
 
         <button className={`custonButton py-4 px-10 ${dayNight ? 'custonButtonLight' : ''}`}>
-          <a href="https://web.whatsapp.com/send?phone=56950372531&text=Hola, como estas? me gustaria hacerte una consulta ;)" target='_blank'>
+          <a href="https://web.whatsapp.com/send?phone=56950372531&text=Hola, como estas? me gustaria hacerte una consulta ;)" target='_blank' rel="noreferrer">
             {!language ? 'Contactame' : 'Contact me'}
           </a>
         </button>

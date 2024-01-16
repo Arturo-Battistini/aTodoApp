@@ -17,20 +17,24 @@ const About = () => {
 
         <div className='aboutme-content w-[60%] flex flex-col gap-5 sm:w-full'>
           <article className='aboutme-description '>
-            <p>
-              {!language ?
-                <>
-                  <p> Prefiero la eficiencia ante todo; disfruto pasando horas escribiendo código y enfrentando nuevos retos. Tengo paciencia para enfrentar adversidades y no temo equivocarme, ya que sé que saldré fortalecido. Me gusta trabajar en equipo, pero también disfruto de la soledad y el control que implica llevar un proyecto pequeño en solitario.</p>
-                  <br></br>
-                  <p>Priorizo la perfección en mi trabajo y no me gusta dejar proyectos a medias. Prefiero recibir retroalimentación de mis clientes y estar abierto a sugerencias para mejorar la experiencia del cliente y del usuario. Me entusiasma aplicar nuevas tecnologías en mis proyectos, contribuir al crecimiento de mis clientes y seguir brindando ayuda a medida que la aplicación evoluciona.</p>
-                </>
-                :
-                <>
-                  <p> I prioritize efficiency above all; I enjoy spending hours writing code and facing new challenges. I have patience to deal with adversities and am not afraid of making mistakes, as I know I will emerge stronger. I like working in a team, but I also enjoy the solitude and control that comes with handling a small project alone.</p>
-                  <br></br>
-                  <p>I prioritize perfection in my work and dislike leaving projects unfinished. I prefer to receive feedback from my clients and am open to suggestions to improve the customer and user experience. I am excited about applying new technologies in my projects, contributing to my clients growth, and continuing to provide assistance as the application evolves.</p>
-                </>}
-            </p>
+          <p>
+            {!language
+              ? (
+              <>
+                Prefiero la eficiencia ante todo; disfruto pasando horas escribiendo código y enfrentando nuevos retos. Tengo paciencia para enfrentar adversidades y no temo equivocarme, ya que sé que saldré fortalecido. Me gusta trabajar en equipo, pero también disfruto de la soledad y el control que implica llevar un proyecto pequeño en solitario.
+                <br /> <br />
+                Priorizo la perfección en mi trabajo y no me gusta dejar proyectos a medias. Prefiero recibir retroalimentación de mis clientes y estar abierto a sugerencias para mejorar la experiencia del cliente y del usuario. Me entusiasma aplicar nuevas tecnologías en mis proyectos, contribuir al crecimiento de mis clientes y seguir brindando ayuda a medida que la aplicación evoluciona.
+              </>
+                )
+              : (
+              <>
+                I prioritize efficiency above all; I enjoy spending hours writing code and facing new challenges. I have patience to deal with adversities and am not afraid of making mistakes, as I know I will emerge stronger. I like working in a team, but I also enjoy the solitude and control that comes with handling a small project alone.
+                <br /> <br />
+                I prioritize perfection in my work and dislike leaving projects unfinished. I prefer to receive feedback from my clients and am open to suggestions to improve the customer and user experience. I am excited about applying new technologies in my projects, contributing to my clients growth, and continuing to provide assistance as the application evolves.
+              </>
+                )}
+          </p>
+
           </article>
 
           <article className='aboutme-list-container flex w-full '>
@@ -65,7 +69,7 @@ const About = () => {
 
         <div className='profile-picture w-[40%] h-[60%] sm:w-full'>
 
-          <picture className='h-full flex justify-center relative 
+          <picture className='h-full flex justify-center relative
 
           before:content-[""] before:absolute before:top-[15px] before:ml-7 before:w-[100%] before:h-[100%]   before:rounded-md
           before:border-[1px] before:border-skyblue  before:mix-blend-hard-light

@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
-import { useInView } from 'react-intersection-observer';
 import { Contexto } from '../../../Contexto/index'
 
 const Contact = () => {
-  const { language, setLanguage, handleLanguage
-  } = useContext(Contexto)
+  const { language } = useContext(Contexto)
 
   return (
 

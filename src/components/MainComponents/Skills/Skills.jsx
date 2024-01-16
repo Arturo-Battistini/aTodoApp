@@ -4,8 +4,7 @@ import { Contexto } from '../../../Contexto/index'
 import '../../../index.css'
 
 export const Skills = () => {
-  const { language, dayNight
-  } = useContext(Contexto)
+  const { language } = useContext(Contexto)
 
   const [fold, setFold] = useState(false)
   const handleFold = () => {
@@ -16,7 +15,7 @@ export const Skills = () => {
 
     <section id='skills' data-aos="fade-right" data-aos-delay="150" className='default-box text-white flex flex-col items-center gap-10 '>
       <div className='universal-title_description--container w-full   '>
-        <h3 className={`universal-title_description`}>
+        <h3 className={'universal-title_description'}>
           {!language ? 'Conocimientos' : 'Skills'} </h3>
       </div>
       <div className='card-container grid grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-2'>
@@ -27,8 +26,10 @@ export const Skills = () => {
         <Card titulo={'Curso de Responsive Design: Maquetación Mobile First'} description={'Maquetación con CSS vanilla'} link={'https://platzi.com/p/arturobattistini/curso/2030-mobile-first/diploma/detalle/'} />
         <Card titulo={'Curso Profesional de Git y GitHub'} description={'Como aplicar Git en un ambiente profesional'} link={'https://platzi.com/p/arturobattistini/curso/1557-git-github/diploma/detalle/'} />
         <Card titulo={'Curso Práctico de HTML y CSS'} description={'Practica para profundizar conocimientos'} link={'https://platzi.com/p/arturobattistini/curso/1758-html-practico/diploma/detalle/'} />
-        {fold ?
-          <>
+        {fold
+          ? <>
+            <Card titulo={'Curso de React.js: Navegación con React Router'} description={'Manejo de rutas estaticas y dinamicas'} link={'https://platzi.com/p/arturobattistini/curso/3468-react-router/diploma/detalle/'} />
+            <Card titulo={'Curso de React.js: Patrones de Render y Composición'} description={'Ampliando conocimientos en el ecosistema de React.js'} link={'https://platzi.com/p/arturobattistini/curso/2457-react-patrones-render/diploma/detalle/'} />
             <Card titulo={'Curso Básico de JavaScript'} description={'Desarrollo con Angular'} link={'https://platzi.com/p/arturobattistini/curso/1814-basico-javascript/diploma/detalle/'} />
             <Card titulo={'Curso Básico de Programación'} description={'Desarrollo con Node.js'} link={'https://platzi.com/p/arturobattistini/curso/1050-basico-programacion/diploma/detalle/'} />
             <Card titulo={'Curso Básico de Python'} description={'Introducción a Python'} link={'https://platzi.com/p/arturobattistini/curso/1937-python-basico/diploma/detalle/'} />
@@ -56,11 +57,8 @@ export const Skills = () => {
             <Card titulo={'Curso Práctico de Maquetación en CSS'} description={'Ampliando conocimientos de CSS'} link={'https://platzi.com/p/arturobattistini/curso/1744-practico-css/diploma/detalle/'} />
             <Card titulo={'Curso Profesional de CSS Grid Layout'} description={'Ampliando conocimientos de CSS'} link={'https://platzi.com/p/arturobattistini/curso/2222-css-grid-layout/diploma/detalle/'} />
 
-
-
           </>
-          :
-          null}
+          : null}
       </div>
 
       <div className='flex gap-5 sm:flex-col w-full justify-center'>
@@ -73,7 +71,7 @@ export const Skills = () => {
         <button
           onClick={() => handleFold()}
           className='custonButton px-5 py-3 mt-5 text-yellow-400 font-bold border-yellow-400 tracking-wider '>
-          <a href='https://platzi.com/p/arturobattistini/' target='_blank'>{!language ? 'Certificar Fuentes' : 'Check Sources'} </a>
+          <a href='https://platzi.com/p/arturobattistini/' target='_blank' rel="noreferrer">{!language ? 'Certificar Fuentes' : 'Check Sources'} </a>
         </button>
       </div>
     </section>

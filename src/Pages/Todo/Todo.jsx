@@ -1,44 +1,40 @@
-import React, { useState, useEffect, useContext } from 'react';
+/* eslint-disable no-unused-expressions */
+import React, { useState, useContext } from 'react'
 import '../../index.css'
 import { Contexto } from '../../Contexto/index'
-import { PlusCircleIcon, XCircleIcon, CheckCircleIcon } from '@heroicons/react/24/solid'
-import DayNight from '../../components/TodoComponents/DayNight';
+import { PlusCircleIcon, XCircleIcon } from '@heroicons/react/24/solid'
+import DayNight from '../../components/TodoComponents/DayNight'
 
-function Todo() {
-
-  const { personas, setPersonas, edad, registro,
+function Todo () {
+  const {
+    personas, setPersonas, edad, registro,
     setEdad, profesion, setProfesion, setRegistro, validarDatos, setValidarDatos
-    , validarNombre, setValidarNombre, nombre, setNombre, tarea, setTarea, selectedItems, setSelectedItems, dayNight, setDayNight
+    , validarNombre, setValidarNombre, nombre, setNombre, tarea, setTarea, selectedItems, setSelectedItems, dayNight
   } = useContext(Contexto)
 
-
-  //que hacer al registrar los datos
+  // que hacer al registrar los datos
   const handleRegister = () => {
     if (profesion.length > 0 && tarea.length > 0) {
-      const nuevaPersona = { profesion: profesion, tarea: tarea }
+      const nuevaPersona = { profesion, tarea }
       personas.push(nuevaPersona)
       setRegistro([...personas], personas)
       setProfesion('')
       setTarea('')
       setFormModal(false)
-
-    }
-    else {
+    } else {
       setValidarDatos(true)
     }
   }
   const handleValidarDatos = () => {
     setValidarDatos(!validarDatos)
   }
-  //modal para validar si hay un nombre en el localStorage o no
+  // modal para validar si hay un nombre en el localStorage o no
   const [nameModal, setNamemodal] = useState(false)
 
   const handleValidador = () => {
     if (nombre.length > 0 && edad > 0 && edad < 110) {
-      setValidarNombre({ nombre: nombre, edad: edad })
-
-    }
-    else {
+      setValidarNombre({ nombre, edad })
+    } else {
       setNamemodal(!nameModal)
       setEdad('')
       setNombre('')
@@ -46,9 +42,9 @@ function Todo() {
   }
 
   const handleDelete = (persona) => {
-    const nuevaListaPersonas = personas.filter((p) => p !== persona);
-    setRegistro(nuevaListaPersonas);
-    setPersonas(nuevaListaPersonas);
+    const nuevaListaPersonas = personas.filter((p) => p !== persona)
+    setRegistro(nuevaListaPersonas)
+    setPersonas(nuevaListaPersonas)
   }
 
   const [formModal, setFormModal] = useState(false)
@@ -57,24 +53,23 @@ function Todo() {
   }
 
   const handleI = (index) => {
-
     // Clonamos el arreglo de elementos seleccionados
-    const newSelectedItems = [...selectedItems];
+    const newSelectedItems = [...selectedItems]
 
     // Verificamos si el índice ya está en la lista de seleccionados.
 
     if (newSelectedItems.includes(index)) {
       // Si está en la lista, quitamos el índice para 'deseleccionar'.
 
-      newSelectedItems.splice(newSelectedItems.indexOf(index), 1);
+      newSelectedItems.splice(newSelectedItems.indexOf(index), 1)
     } else {
       // Si no está en la lista, lo agregamos 'seleccionamos'.
-      newSelectedItems.push(index);
+      newSelectedItems.push(index)
     }
 
     // Actualiza el estado con la nueva lista de elementos seleccionados
-    setSelectedItems(newSelectedItems);
-  };
+    setSelectedItems(newSelectedItems)
+  }
   return (
     <>
       <div className='text-white text-2xl h-[10vh] flex items-center justify-center gap-5'>
@@ -82,7 +77,6 @@ function Todo() {
         {validarNombre.length === 0 ? '' : <DayNight />}
       </div>
       <section className='master-container flex justify-center items-center h-[90vh] w-screen  bg-[#060E1B] relative '>
-
 
         {/* --------------------------------------------------------------------------------------------   Modal de advertencia */}
         <div className={`modal ${nameModal ? '' : 'hidden'}`}>
@@ -122,14 +116,14 @@ function Todo() {
                 className=' bg-[#ffffff3b] tarea-input p-3 rounded-md text-[#cecece] w-full max-h-[200px] overflow-y-auto resize-none max-w-full'
                 placeholder='Tarea...'
                 onChange={(event) => {
-                  const nuevaTarea = event.target.value;
-                  setTarea(nuevaTarea);
+                  const nuevaTarea = event.target.value
+                  setTarea(nuevaTarea)
                 }}
                 value={tarea}
               ></textarea>
             </div>
 
-            {/*--------------------------------------------------------------------------------------- AddButton */}
+            {/* --------------------------------------------------------------------------------------- AddButton */}
             <button
               className='p-3 text-white bg-[#cecece1d] border-none hover:text-[#64FFDA]  transition-all rounded-md'
               onClick={() => handleRegister()}
@@ -141,8 +135,8 @@ function Todo() {
         </div>
 
         {/* Condicional ventana principal */}
-        {!validarNombre.edad && !validarNombre.nombre ?
-          <div className='relative name-container flex  gap-4   p-5 rounded-md   border-2 border-[#64ffdb75]  max-w-5xl  w-[10/12]
+        {!validarNombre.edad && !validarNombre.nombre
+          ? <div className='relative name-container flex  gap-4   p-5 rounded-md   border-2 border-[#64ffdb75]  max-w-5xl  w-[10/12]
             sm:flex-col  sm:w-11/12' >
             <h1 className='absolute top-[-40px] text-[#cecece] right-[calc(50%-90px)]' >Pon tu nombre y tu edad</h1>
             <input className='profesion-name p-3 rounded-md text-[#f2f2f2] bg-[#ffffff3b] placeholder:text-[#cececebe]'
@@ -150,7 +144,7 @@ function Todo() {
               inputMode="text"
               placeholder='Agrega tu Nombre'
               onChange={(event) => {
-                const nuevoNombre = event.target.value.replace(/[^a-zA-Z\s]/g, '');
+                const nuevoNombre = event.target.value.replace(/[^a-zA-Z\s]/g, '')
                 setNombre(nuevoNombre)
               }}
               value={nombre}>
@@ -162,8 +156,9 @@ function Todo() {
               placeholder='Agrega tu edad'
               onChange={(event) => {
                 const edadp = parseInt(event.target.value)
-                edadp >= 0 ?
-                  setEdad(event.target.value) : null
+                edadp >= 0
+                  ? setEdad(event.target.value)
+                  : null
               }}
               value={edad}>
             </input>
@@ -176,8 +171,7 @@ function Todo() {
             </button>
           </div>
 
-          :
-          <section className={`app-tarea_container max-w-[1200px]  w-full flex gap-14 sm:gap-4 text-[#cecece]  border-2 border-[#64FFDA] 
+          : <section className={`app-tarea_container max-w-[1200px]  w-full flex gap-14 sm:gap-4 text-[#cecece]  border-2 border-[#64FFDA] 
             p-8 rounded-md relative m-4 
             max-h-[80vh] sm:p-3 sm:m-0 sm:flex-col sm:border-none transition-all duration-300 ease-in ${personas.length > 0 ? '' : 'sm:h-[70vh]'} ${!dayNight ? '' : 'bg-[#2fbaf7]'}`}>
 
@@ -191,9 +185,11 @@ function Todo() {
 
                 <button
                   className=' border-none w-full flex  justify-center'
-                  onClick={() => handleFormModal()}  >
-                  {!formModal ? <PlusCircleIcon className={`h-20 w-h-20 text-green-500 border-none hover:text-[#64FFDA] sm:h-12 sm:w-12
-                  ${!dayNight ? '' : 'bg-[#c9c3c3] rounded-full'} `} /> : null}
+                  onClick={() => handleFormModal()} >
+                  {!formModal
+                    ? <PlusCircleIcon className={`h-20 w-h-20 text-green-500 border-none hover:text-[#64FFDA] sm:h-12 sm:w-12
+                  ${!dayNight ? '' : 'bg-[#c9c3c3] rounded-full'} `} />
+                    : null}
                 </button>
               </div>
 
@@ -207,7 +203,6 @@ function Todo() {
                   className={`info-content z-0 flex flex-col justify-around w-full font-bold text-lg relative rounded-md p-2 items-start transition-all cursor-pointer sm:py-5
                     ${selectedItems.includes(index) ? 'bg-green-600' : 'bg-slate-300'} `}
 
-
                   onClick={() => handleI(index)}
                 >
 
@@ -220,17 +215,12 @@ function Todo() {
 
                   </div>
 
-
                   <button
                     type='submit'
                     onClick={() => handleDelete(persona)}
                     className='absolute  border-none flex justify-center items-center p-0 bg-white  z-10 rounded-full top-1 right-1'>
                     <XCircleIcon className='h-8 w-8 text-red-600 border-none hover:text-white hover:bg-red-600 hover:rounded-full transition-all  ' />
                   </button>
-
-
-
-
 
                 </div>
               ))}
@@ -248,7 +238,6 @@ function Todo() {
           </div>
         </div>
       </section>
-
 
     </>
   )

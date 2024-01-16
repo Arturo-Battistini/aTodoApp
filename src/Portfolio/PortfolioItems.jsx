@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import React, { useContext } from 'react'
 import '../index.css'
 import { EyeIcon } from '@heroicons/react/24/solid'
 import { Gith } from '../Icons/Icons'
 import { Contexto } from '../Contexto/index'
 import { Link } from 'react-router-dom'
-const PortfolioItems = ({ pDirection, rowDirection, titleDirection, tecDirection, proyect, tech, tech2, tech3, appLink, pfDescription, pfDescriptionEn }) => {
-  const { language, setLanguage, handleLanguage,
-  } = useContext(Contexto)
+const PortfolioItems = ({ pDirection, rowDirection, titleDirection, tecDirection, proyect, tech, tech2, tech3, appLink, pfDescription, pfDescriptionEn, apptitle, apptitleEn }) => {
+  const { language } = useContext(Contexto)
   return (
 
     <div className={`Portfolio-items_container flex justify-center items-center ${rowDirection} sm:block sm:relative sm:h-[300px]
@@ -23,14 +23,16 @@ const PortfolioItems = ({ pDirection, rowDirection, titleDirection, tecDirection
       <div className={`portfolio-items_txt-container w-1/2 flex flex-col gap-2 sm:gap-0 sm:p-5  ${titleDirection}
           sm:absolute sm:top-0 sm:w-full sm:h-full sm:bg-[#112240b3] sm:justify-center sm:gap-2`}>
         <div className='portfolio-title_container sm:text-left'>
-          <p className='mini-title text-xs sm:bg-transparent  sm:left-0 '>{!language ? 'Proyecto realizado' : 'Completed project'}</p>
-
-          <h3 className='portfolio-title'>{!language ? 'Todo List' : 'Todo List'}</h3>
+          <p className='mini-title mb-2 text-xs sm:bg-transparent  sm:left-0 '>
+            {!language ? 'Proyecto realizado' : 'Completed project'}
+          </p>
+          <h3 className='portfolio-title'>
+            {!language ? apptitle : apptitleEn }
+          </h3>
         </div>
         <div className='portfolio-content bg-[#112240] sm:bg-transparent  '>
           <p className={`text-pText  w-[100%] bg-[#112240] sm:bg-transparent h-full  rounded-sm sm:p-1 ${pDirection}`}>
             {!language ? pfDescription : pfDescriptionEn}
-
           </p>
         </div>
 
