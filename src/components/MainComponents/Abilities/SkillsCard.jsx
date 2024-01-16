@@ -9,7 +9,7 @@ const SkillsCard = ({ skill, skill2, skill3, skill4, spaSkill, serviceSelected }
 
       <h4 className='portfolio-title after:hidden' >{
         serviceSelected === 1
-          ? !language ? 'Tecnologías con las que puedo contribuir:' : 'Technologies I can contribute with:'
+          ? !language ? 'Habilidades y Conocimientos en:' : 'Technologies I can contribute with:'
           : serviceSelected === 2
             ? !language ? 'Tecnologías en las que tengo conocimientos, pero estoy en proceso de aprendizaje:' : 'Technologies in which I have knowledge, but I am in the learning process:'
             : serviceSelected === 3

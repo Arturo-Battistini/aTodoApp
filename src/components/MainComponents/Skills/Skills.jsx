@@ -16,7 +16,7 @@ export const Skills = () => {
     <section id='skills' data-aos="fade-right" data-aos-delay="150" className='default-box text-white flex flex-col items-center gap-10 '>
       <div className='universal-title_description--container w-full   '>
         <h3 className={'universal-title_description'}>
-          {!language ? 'Conocimientos' : 'Skills'} </h3>
+          {!language ? 'Cursos y estudios' : 'Courses'} </h3>
       </div>
       <div className='card-container grid grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-2'>
 

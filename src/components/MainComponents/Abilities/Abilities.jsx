@@ -10,7 +10,7 @@ const Abilities = () => {
     <section data-aos="fade-right" data-aos-delay="150" id='abilities' className='text-pText services-container default-box p-32 sm:p-0 '>
       <div className='universal-title_description--container w-full '>
         <h3 className={'universal-title_description '}>
-          {!language ? 'Aptitudes' : 'Skills'}
+          {!language ? 'Mi escosistema de trabajo ' : 'Skills and Knowledge in'}
         </h3>
       </div>
 
@@ -43,20 +43,20 @@ const Abilities = () => {
 
         {serviceSelected === 1
 
-          ? <SkillsCard spaSkill={'Tecnologías con las que puedo contribuir:'} skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / Next.js / Vanilla JavaScript '} skill4={'Git / GitHub'}
-            engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected} />
+          ? <SkillsCard skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / Next.js / Vanilla JavaScript '} skill4={'Git / GitHub'}
+            engTitle={'Technologies I can contribute with'} serviceSelected={serviceSelected} />
           : false
         }
         {serviceSelected === 2
-          ? <SkillsCard skill={'SQL'} skill2={'Node.js (still learning)'} skill3={'Python.js (still learning)'} skill4={'AWS'}
-            engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected}
+          ? <SkillsCard skill={'SQL'} skill2={'Node.js '} skill3={'Python.js '} skill4={'AWS'}
+             serviceSelected={serviceSelected}
           />
           : false
         }
 
         {serviceSelected === 3
           ? <SkillsCard skill={'Adobe Photoshop'} skill2={'Adobe Illustrator'} skill3={'Figma'} skill4={'Notion'}
-            engTitle={'Technologies I can contribute with'} spaTitle={'Tecnologías con las que puedo contribuir:'} serviceSelected={serviceSelected} />
+            serviceSelected={serviceSelected} />
           : false
         }
       </div>
