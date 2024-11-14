@@ -25,9 +25,10 @@ export const Skills = () => {
         <Card titulo={'Curso de Asincronismo con JavaScript'} description={'JavaScript intermedio'} link={'https://platzi.com/p/arturobattistini/curso/3175-asincronismo-js/diploma/detalle/'} />
         <Card titulo={'Curso de Responsive Design: Maquetación Mobile First'} description={'Maquetación con CSS vanilla'} link={'https://platzi.com/p/arturobattistini/curso/2030-mobile-first/diploma/detalle/'} />
         <Card titulo={'Curso Profesional de Git y GitHub'} description={'Como aplicar Git en un ambiente profesional'} link={'https://platzi.com/p/arturobattistini/curso/1557-git-github/diploma/detalle/'} />
-        <Card titulo={'Curso Práctico de HTML y CSS'} description={'Practica para profundizar conocimientos'} link={'https://platzi.com/p/arturobattistini/curso/1758-html-practico/diploma/detalle/'} />
+        <Card titulo={'Curso de Creación de Páginas Web con Astro'} description={'Aprendiendo nuevo framework para crear páginas web estáticas'} link={'https://platzi.com/p/arturobattistini/curso/6207-astro/diploma/detalle/'} />
         {fold
           ? <>
+            <Card titulo={'Curso Práctico de HTML y CSS'} description={'Practica para profundizar conocimientos'} link={'https://platzi.com/p/arturobattistini/curso/1758-html-practico/diploma/detalle/'} />
             <Card titulo={'Curso de React.js: Navegación con React Router'} description={'Manejo de rutas estaticas y dinamicas'} link={'https://platzi.com/p/arturobattistini/curso/3468-react-router/diploma/detalle/'} />
             <Card titulo={'Curso de React.js: Patrones de Render y Composición'} description={'Ampliando conocimientos en el ecosistema de React.js'} link={'https://platzi.com/p/arturobattistini/curso/2457-react-patrones-render/diploma/detalle/'} />
             <Card titulo={'Curso Básico de JavaScript'} description={'Desarrollo con Angular'} link={'https://platzi.com/p/arturobattistini/curso/1814-basico-javascript/diploma/detalle/'} />

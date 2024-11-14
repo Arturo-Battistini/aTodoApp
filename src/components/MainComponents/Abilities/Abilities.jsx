@@ -10,7 +10,7 @@ const Abilities = () => {
     <section data-aos="fade-right" data-aos-delay="150" id='abilities' className='text-pText services-container default-box p-32 sm:p-0 '>
       <div className='universal-title_description--container w-full '>
         <h3 className={'universal-title_description '}>
-          {!language ? 'Mi escosistema de trabajo ' : 'Skills and Knowledge in'}
+          {!language ? 'Mi ecosistema de trabajo ' : 'Skills and Knowledge'}
         </h3>
       </div>
 
@@ -24,17 +24,17 @@ const Abilities = () => {
             sm:flex-row sm:overflow-x-scroll  sm:before:h-[1px] sm:before:w-full sm:before:bottom-0  sm:before:left-0 '>
 
             <li onClick={() => setServiceSelected(1)}
-              className={`skills-items  ${serviceSelected === 1 ? 'about-item_aditional-styles ' : ''}`}>
+              className={`transition-all duration-300 text-sm hover:text-skyblue skills-items  ${serviceSelected === 1 ? 'about-item_aditional-styles ' : ''}`}>
               Frontend
             </li>
 
             <li onClick={() => setServiceSelected(2)}
-              className={`skills-items ${serviceSelected === 2 ? 'about-item_aditional-styles' : ''}`}>
+              className={`transition-all duration-300 text-sm hover:text-skyblue skills-items ${serviceSelected === 2 ? 'about-item_aditional-styles' : ''}`}>
               Backend
             </li>
 
             <li onClick={() => setServiceSelected(3)}
-              className={`skills-items ${serviceSelected === 3 ? 'about-item_aditional-styles ' : ''}`}>
+              className={`transition-all duration-300 text-sm hover:text-skyblue skills-items ${serviceSelected === 3 ? 'about-item_aditional-styles ' : ''}`}>
               {!language ? 'Diseño' : 'Design'}
             </li>
           </ul>
@@ -43,13 +43,13 @@ const Abilities = () => {
 
         {serviceSelected === 1
 
-          ? <SkillsCard skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / Next.js / Vanilla JavaScript '} skill4={'Git / GitHub'}
+          ? <SkillsCard skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / React Native / Vanilla JavaScript / TipeScript / Next.js / Astro.build'} skill4={'Git / GitHub'}
             engTitle={'Technologies I can contribute with'} serviceSelected={serviceSelected} />
           : false
         }
         {serviceSelected === 2
           ? <SkillsCard skill={'SQL'} skill2={'Node.js '} skill3={'Python.js '} skill4={'AWS'}
-             serviceSelected={serviceSelected}
+            serviceSelected={serviceSelected}
           />
           : false
         }
