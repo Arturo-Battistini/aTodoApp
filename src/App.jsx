@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRoutes, BrowserRouter } from 'react-router-dom'
+import { useRoutes, HashRouter } from 'react-router-dom'
 import './index.css'
 import { ContextoProvider } from './Contexto/index'
 
@@ -18,13 +18,13 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ContextoProvider>
-        <DefaultStyles>
-          <AppRoutes />
-        </DefaultStyles>
-      </ContextoProvider>
-    </BrowserRouter>
+    <HashRouter>
+    <ContextoProvider>
+      <DefaultStyles>
+        <AppRoutes />
+      </DefaultStyles>
+    </ContextoProvider>
+  </HashRouter>
   )
 }
 

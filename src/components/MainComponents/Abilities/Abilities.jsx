@@ -43,12 +43,12 @@ const Abilities = () => {
 
         {serviceSelected === 1
 
-          ? <SkillsCard skill={'HTML5 / JSX / PUG'} skill2={'Vanilla CSS / Sass / Tailwind / MUI / Ant Design'} skill3={'React.js / React Native / Vanilla JavaScript / TipeScript / Next.js / Astro.build'} skill4={'Git / GitHub'}
+          ? <SkillsCard skill={'Frameworks: Angular / React'} skill2={'Javascipt / TypeScript / HTML / CSS '} skill3={'SASS / Tailwind / Astro '} skill4={'Git / GitHub / Git Tortoice / Bitbucket'}
             engTitle={'Technologies I can contribute with'} serviceSelected={serviceSelected} />
           : false
         }
         {serviceSelected === 2
-          ? <SkillsCard skill={'SQL'} skill2={'Node.js '} skill3={'Python.js '} skill4={'AWS'}
+          ? <SkillsCard skill={'Oracle Sql / Mongo DB'} skill2={'Node.js / Express '} skill3={'Java / SpringBoot '} skill4={'Struts / MVC '}
             serviceSelected={serviceSelected}
           />
           : false

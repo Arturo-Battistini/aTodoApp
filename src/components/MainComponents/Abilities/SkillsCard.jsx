@@ -11,7 +11,7 @@ const SkillsCard = ({ skill, skill2, skill3, skill4, spaSkill, serviceSelected }
         serviceSelected === 1
           ? !language ? 'Habilidades y Conocimientos en:' : 'Technologies I can contribute with:'
           : serviceSelected === 2
-            ? !language ? 'Tecnologías en las que tengo conocimientos, pero estoy en proceso de aprendizaje:' : 'Technologies in which I have knowledge, but I am in the learning process:'
+            ? !language ? 'Algunas tecnologías de backend y base de datos de las que tengo conocimientos parciales.' : 'Some backend and database technologies with which I have partial knowledge.'
             : serviceSelected === 3
               ? !language ? 'Algunas aplicaciones de diseño con las que me gusta trabajar:' : 'Some design applications I enjoy working with:'
               : false}

@@ -13,6 +13,9 @@ const Portfolio = () => {
         <h3 className={`universal-title_description ${dayNight ? 'universal-title_description--Light' : ''} `}>
           {!language ? 'Portafolio' : 'Portfolio'}
         </h3>
+        <span className='text-[#ffd564b8]'>{!language
+          ? <>Lamentablemente, no puedo compartir todos los proyectos en los que he trabajado, ya que la mayoría son privados. Sin embargo, estaré encantado de hablar sobre ellos y mi experiencia durante una conversación.</>
+          : <>Unfortunately, I cannot showcase all the projects I have worked on, as most of them are private. However, I would be happy to discuss them and my experience during a conversation.</>} </span>
 
       </div>
       <section className='portfolio-container flex flex-col gap-[100px]'>

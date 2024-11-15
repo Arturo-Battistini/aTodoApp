@@ -21,49 +21,31 @@ const About = () => {
             {!language
               ? (
               <>
-                Prefiero la eficiencia ante todo; disfruto pasando horas escribiendo código y enfrentando nuevos retos. Tengo paciencia para enfrentar adversidades y no temo equivocarme, ya que sé que saldré fortalecido. Me gusta trabajar en equipo, pero también disfruto de la soledad y el control que implica llevar un proyecto pequeño en solitario.
-                <br /> <br />
-                Priorizo la perfección en mi trabajo y no me gusta dejar proyectos a medias. Prefiero recibir retroalimentación de mis clientes y estar abierto a sugerencias para mejorar la experiencia del cliente y del usuario. Me entusiasma aplicar nuevas tecnologías en mis proyectos, contribuir al crecimiento de mis clientes y seguir brindando ayuda a medida que la aplicación evoluciona.
+                El compromiso y la dedicación son la filosofía que me guía en la vida. Para mí, es importante aportar valor a mi entorno y ser útil en cada lugar al que voy. Me apasiona aprender y enfrentar nuevos desafíos.
+                <br /><br />
+                Valoro el debate constructivo que aporte ideas valiosas a mis proyectos.
               </>
                 )
               : (
               <>
-                I prioritize efficiency above all; I enjoy spending hours writing code and facing new challenges. I have patience to deal with adversities and am not afraid of making mistakes, as I know I will emerge stronger. I like working in a team, but I also enjoy the solitude and control that comes with handling a small project alone.
-                <br /> <br />
-                I prioritize perfection in my work and dislike leaving projects unfinished. I prefer to receive feedback from my clients and am open to suggestions to improve the customer and user experience. I am excited about applying new technologies in my projects, contributing to my clients growth, and continuing to provide assistance as the application evolves.
+               Commitment and dedication are the philosophy that guides me in life. For me, it’s important to bring value to my surroundings and be helpful wherever I go. I am passionate about learning and facing new challenges.
+              <br /><br />
+              I value constructive discussions that bring valuable ideas to my projects.
               </>
                 )}
           </p>
 
           </article>
-
+          <p>{!language
+            ? (<>Últimas tecnologías utilizadas al <span className='text-skyblue'>15/11/2024</span> en mi último proyecto:</>)
+            : (<>Latest technologies used as of <span className='text-skyblue'>11/15/2024</span> in my most recent project:</>)}</p>
           <article className='aboutme-list-container flex w-full '>
             <ul className='aboutme-list w-full flex flex-wrap gap-3'>
-              <li className='aboutme-item'> {!language ? 'Trabajo duro' : 'Hard work'}</li>
-              <li className='aboutme-item'> {!language ? 'Aprendizaje' : 'Learning'}</li>
-              <li className='aboutme-item'> {!language ? 'Humildad' : 'Humility'}</li>
-              <li className='aboutme-item'> {!language ? 'Perseverancia' : 'Perseverance'}</li>
-              <li className='aboutme-item'> {!language ? 'Crecimiento personal' : 'Personal growth'}</li>
-              <li className='aboutme-item'> {!language ? 'Lealtad' : 'Loyalty'}</li>
-              <li className='aboutme-item'> {!language ? 'Familia' : 'Family'}</li>
-              <li className='aboutme-item'> {!language ? 'Principios' : 'Principles'}</li>
-              <li className='aboutme-item'> {!language ? 'Dignidad' : 'Dignity'}</li>
-              <li className='aboutme-item'> {!language ? 'Compañerismo' : 'Companionship'} </li>
-              <li className='aboutme-item'> {!language ? 'Paciencia' : 'Patience '} </li>
+              <li className='aboutme-item'> {!language ? 'Angular' : 'Angular'}</li>
+              <li className='aboutme-item'> {!language ? 'SASS' : 'SASS'}</li>
+              <li className='aboutme-item'> {!language ? 'Node.js' : 'Node.js'}</li>
+              <li className='aboutme-item'> {!language ? 'FireBase' : 'FireBase'}</li>
             </ul>
-            {/*             <ul className='aboutme-list w-full flex flex-wrap gap-3'>
-              <li className='aboutme-item'>React</li>
-              <li className='aboutme-item'>Taildwind</li>
-              <li className='aboutme-item'>WebPack</li>
-              <li className='aboutme-item'>Javascript</li>
-              <li className='aboutme-item'>sass</li>
-              <li className='aboutme-item'>Html5</li>
-              <li className='aboutme-item'>Wordpress</li>
-              <li className='aboutme-item'>Css</li>
-              <li className='aboutme-item'>Docker</li>
-              <li className='aboutme-item'>Node Js (inprogress)</li>
-              <li className='aboutme-item'>Next Js (inprogress)</li>
-            </ul> */}
           </article>
         </div>
 
